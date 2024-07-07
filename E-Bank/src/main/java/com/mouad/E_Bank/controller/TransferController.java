@@ -16,10 +16,8 @@ public class TransferController {
     TransferServiceImpl transferService;
 
     @PostMapping("/send/{senderCompteId}/{receiverCompteId}/{amount}/{description}")
-    public Transfer createTransfer(@PathVariable Long senderCompteId,
-                                   @PathVariable Long receiverCompteId,
-                                   @PathVariable Double amount,
-                                   @PathVariable String description) {
+    public Transfer createTransfer(@PathVariable Long senderCompteId,@PathVariable Long receiverCompteId,
+                                   @PathVariable Double amount,@PathVariable String description) {
         return transferService.transfer(senderCompteId, receiverCompteId, amount, description);
     }
     
